@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 import {ShoppingCartService} from '../shopping-cart.service';
 import {Observable, Subject, Subscription} from 'rxjs';
@@ -6,6 +6,7 @@ import {ProductService} from '../product.service';
 import {ProductShoppingCartResponseDto} from '../model/shopping-cart-model';
 import {ProductOrderLine, ProductResponseDto} from '../model/product-model';
 import {Router} from '@angular/router';
+import {OrderRequestDto, PaymentDetailsDto} from '../model/order-model';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -16,11 +17,18 @@ export class ShoppingCartComponent implements OnInit {
 
   products: ProductResponseDto[] = [];
   productOrderLine: ProductOrderLine[] = [];
+  paymentDetails: PaymentDetailsDto = {
+    cardHolder: '',
+    cardNumber: '',
+    expirationDate: '',
+    cardProvider: 'VISA'
+  };
 
   constructor(private toastr: ToastrService,
               private shoppingCartService: ShoppingCartService,
               private productService: ProductService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit(): void {
     this.shoppingCartService.getProductsFromCart().subscribe(data => {
@@ -28,23 +36,29 @@ export class ShoppingCartComponent implements OnInit {
       productsInCart.forEach(product => {
         this.productService.getProductById(product.id).subscribe(productData => {
           this.products.push(productData);
-          this.productOrderLine.push({productId : productData.id, quantity: 1});
+          this.productOrderLine.push({productId: productData.id, quantity: 1});
         });
       });
     });
   }
 
   makeOrder(): void {
-    this.shoppingCartService.makeOrder(this.productOrderLine).subscribe(data => {
+    const orderRequestDto: OrderRequestDto = {
+      paymentDetailsDto: this.paymentDetails,
+      shoppingCartOrderLineDtoList: this.productOrderLine
+    };
+
+    this.shoppingCartService.makeOrder(orderRequestDto).subscribe(data => {
       this.router.navigate(['/order-success']);
     }, error => {
       console.log('error');
     });
+
   }
 
-  changeQuantity(event: any, productId: number): void{
-    this.productOrderLine.forEach( orderLine => {
-      if (orderLine.productId === productId){
+  changeQuantity(event: any, productId: number): void {
+    this.productOrderLine.forEach(orderLine => {
+      if (orderLine.productId === productId) {
         orderLine.quantity = event.value as number;
       }
     });

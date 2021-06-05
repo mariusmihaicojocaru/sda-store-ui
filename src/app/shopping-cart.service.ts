@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {AppConfig} from './config/app-config';
 import {ShoppingCartResponseDto} from './model/shopping-cart-model';
 import {ProductOrderLine} from './model/product-model';
+import {OrderRequestDto, OrderResponseDto} from './model/order-model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class ShoppingCartService {
     return this.httpClient.get<ShoppingCartResponseDto>(AppConfig.API_PATH + '/shopping-cart');
   }
 
-  makeOrder(orderLineDtos: ProductOrderLine[]): Observable<any>{
-    return this.httpClient.post(AppConfig.API_PATH + '/order', orderLineDtos);
+  makeOrder(orderRequestDto: OrderRequestDto): Observable<any>{
+    return this.httpClient.post(AppConfig.API_PATH + '/order', orderRequestDto);
   }
 }

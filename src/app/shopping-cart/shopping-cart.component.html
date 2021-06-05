@@ -64,11 +64,11 @@
 <!--          <i class="fa fa-cc-discover" style="color:orange;"></i>-->
         </div>
         <div class="first_lastName">
-          <input type="text" placeholder="Card holder"/>
-          <input type="text" placeholder="Card number"/>
+          <input type="text" [(ngModel)]="paymentDetails.cardHolder" name="cardHolder" placeholder="Card holder"/>
+          <input type="text" [(ngModel)]="paymentDetails.cardNumber" name="cardNumber" placeholder="Card number"/>
         </div>
         <div class="first_lastName">
-          <input type="text" placeholder="Expiration date"/>
+          <input type="text" [(ngModel)]="paymentDetails.expirationDate" name="expirationDate" placeholder="Expiration date"/>
           <input type="text" placeholder="Security code"/>
         </div>
         <h1>Shipping Details</h1>
