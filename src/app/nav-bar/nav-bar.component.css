@@ -1,0 +1,20 @@
+.navbar {
+  justify-content: space-between;
+}
+
+span {
+  padding-right: 2rem;
+}
+a {
+  font-size: 24px;
+}
+
+.material-icons-outlined {
+  font-size: 29px;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Monotype Corsiva";
+}

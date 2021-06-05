@@ -1,0 +1,16 @@
+.panel_header {
+  display: flex;
+}
+
+.order_id{
+  justify-content: center;
+
+}
+
+.address{
+  justify-content: center;
+}
+
+
+
+

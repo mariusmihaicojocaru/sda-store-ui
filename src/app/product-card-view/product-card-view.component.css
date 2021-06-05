@@ -1,0 +1,21 @@
+.product-card{
+  max-width: 300px;
+  min-height: 520px;
+  float: left;
+  max-height: 520px;
+  margin: 10px;
+}
+
+.product-list{
+  overflow: auto;
+}
+
+.filter-wrapper{
+  float:left;
+  width: 15%;
+}
+
+.full-width{
+  width: 100%;
+}
+

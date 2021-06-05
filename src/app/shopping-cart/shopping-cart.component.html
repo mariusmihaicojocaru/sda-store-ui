@@ -1,0 +1,94 @@
+<app-nav-bar></app-nav-bar>
+<div class="everything">
+  <div *ngIf="products.length > 0">
+    <mat-card-title class="title" style="color: #5353b5"> Your Shopping Cart</mat-card-title>
+    <mat-card class="product-card" *ngFor="let product of products">
+      <div>
+        <img class="product-img-wrapper" src="https://media.telekom.ro/images/lp/tv-net-voce/tv_banner.png"/>
+      </div>
+      <div>
+        <mat-card-header class="title-wrapper">
+          <mat-card-title class="product-title"> {{product.name}} </mat-card-title>
+          <mat-label class="product-description-label"> Product Description</mat-label>
+          <mat-label class="product-description-text">{{product.description}}
+          </mat-label>
+        </mat-card-header>
+      </div>
+      <div class="price-wrapper">
+        <mat-card-content>
+          <p class="paragraph-description">
+            {{product.price}}
+          </p>
+          <div class="quantity-selector">
+            <mat-select (selectionChange)="changeQuantity($event, product.id)" name="quantityDropDown">
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+              <mat-option value="3">3</mat-option>
+              <mat-option value="4">4</mat-option>
+              <mat-option value="5">5</mat-option>
+            </mat-select>
+            <label style="font-weight: bolder">buc.</label>
+          </div>
+        </mat-card-content>
+      </div>
+    </mat-card>
+<!--    <button (click)="makeOrder()"> Place Order</button>-->
+  </div>
+
+  <div *ngIf="products.length === 0">
+    Please go and add some products to the cart.
+  </div>
+    <div class="payment_details">
+      <div class="details_card">
+        <h1>Payment Information</h1>
+        <div class="name_address">
+          <div class="first_lastName">
+            <input type="text" placeholder="First Name"/>
+            <input type="text" placeholder="Last Name"/>
+          </div>
+          <div class="address">
+            <input type="text" onkeyup="change()" id="put" placeholder="Address"/>
+            <input type="number" placeholder="Pincode"/>
+            <input type="text" placeholder="Country"/>
+          </div>
+        </div>
+        <div class="payment_method">
+          <label class="accepted-cards">Accepted Cards</label>
+          <img class="mastercard" src="data:image/png;base64,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">
+          <img class="visa" src="data:image/png;base64,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">
+          <img class="paypal" src="https://cdn.iconscout.com/icon/free/png-256/paypal-4-226455.png">
+
+<!--          <i class="fab fa-cc-visa"></i>-->
+<!--          <i class="fa fa-cc-amex" style="color:blue;"></i>-->
+<!--          <i class="fab fa-cc-mastercard"></i>-->
+<!--          <i class="fa fa-cc-discover" style="color:orange;"></i>-->
+        </div>
+        <div class="first_lastName">
+          <input type="text" placeholder="Card holder"/>
+          <input type="text" placeholder="Card number"/>
+        </div>
+        <div class="first_lastName">
+          <input type="text" placeholder="Expiration date"/>
+          <input type="text" placeholder="Security code"/>
+        </div>
+        <h1>Shipping Details</h1>
+        <div class="shipping_card">
+          <div class="new_card">
+            <h4>Same as personal</h4>
+            <p id="output">Bharat House Bombay Samachar Road</p>
+            <p>400001</p>
+          </div>
+          <div class="add_savedcard">
+            <h4>Saved Address</h4>
+            <p>Lokhandwala Complex, Andheri (west)</p>
+            <p>400053</p>
+          </div>
+        </div>
+        <div class="proced_payment">
+          <a (click)="makeOrder()">Make order</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

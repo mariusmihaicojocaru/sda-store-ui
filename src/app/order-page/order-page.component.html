@@ -1,0 +1,53 @@
+<app-nav-bar></app-nav-bar>
+
+<mat-accordion>
+  <mat-expansion-panel hideToggle *ngFor="let order of orders">
+    <mat-expansion-panel-header>
+      <div class="panel_header">
+      <div class="order_id">
+      <mat-panel-title>
+        Order id : {{order.id}}
+      </mat-panel-title>
+        </div>
+      <div class="total_price">
+      <mat-panel-title>
+       Total price : {{order.totalPrice}}
+      </mat-panel-title>
+      </div>
+
+        <div class="total_price">
+          <mat-panel-title>
+            Total items : {{order.orderLines.length}}
+          </mat-panel-title>
+          Expand to see more details
+        </div>
+
+      </div>
+    </mat-expansion-panel-header>
+
+    <div class="tg-wrap"><table>
+      <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Unit Price</th>
+        <th>Pcs.</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let orderLine of order.orderLines">
+        <td>{{orderLine.productName}}</td>
+        <td>{{orderLine.price}}</td>
+        <td>{{orderLine.quantity}}</td>
+      </tr>
+      </tbody>
+    </table></div>
+
+    <div class="address">
+      City: {{order.addressDto.city}},
+      Street: {{order.addressDto.street}},
+      Country: {{order.addressDto.country}},
+      ZipCode: {{order.addressDto.zipcode}}
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
