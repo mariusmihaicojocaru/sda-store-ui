@@ -1,0 +1,27 @@
+
+/*.mat-card:not([class*=mat-elevation-z]) {*/
+/*  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);*/
+/*  width: 570px;*/
+/*}*/
+div {
+  position: absolute;
+  padding-bottom: 0px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  /*-moz-transform: translate(-50%, -50%);*/
+  /*-ms-transform: translate(-50%, -50%);*/
+  /*-o-transform: translate(-50%, -50%);*/
+  transform: translate(-50%, -50%);
+}
+.mat-card-title {
+  font-size: 24px;
+  font-weight: 500;
+  width: 162px;
+  padding-left: 190px;
+}
+
+.description{
+  padding-bottom: 430px;
+
+}

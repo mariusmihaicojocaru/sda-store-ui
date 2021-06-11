@@ -2,12 +2,25 @@
 display: none;
 }
 
-.category-tree-view li,
-.category-tree-view ul{
-  list-style-type:none;
-}
-
 .category-item{
   display: inline;
 }
+
+.material-icons {
+  font-size: 16px;
+}
+
+.mat-icon-button {
+  /*min-width: 0;*/
+  width: 20px;
+  height: 40px;
+}
+
+
+
+
+
+
+
+
 

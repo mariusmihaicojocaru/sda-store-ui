@@ -39,4 +39,11 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  redirectGoogle(): void{
+    window.location.assign('http://www.google.com');
+  }
+
+  redirectFacebook(): void{
+    window.location.assign('http://www.facebook.com');
+  }
 }

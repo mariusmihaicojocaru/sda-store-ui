@@ -1,13 +1,17 @@
-<div>
-  <mat-card style="background-color: darkslateblue">
-    <mat-card-title>Create Product</mat-card-title>
+<app-nav-bar></app-nav-bar>
+
+<div class="description"><p>Here you can post your own product if you want to sell it.</p>
+<p> Note that your email is essential if you want to be contacted.</p></div>
+
+<div class="form">
+    <mat-card-title>Post Product</mat-card-title>
     <hr>
     <form>
-      <mat-form-field>
+      <mat-form-field class="title">
         <mat-label>Product Title</mat-label>
         <input matInput [(ngModel)]="product.name" name="product_title">
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="content">
         <mat-label>Stock</mat-label>
         <input matInput [(ngModel)]="product.stock" name="product_stock">
       </mat-form-field>
@@ -42,8 +46,7 @@
         </mat-select>
       </mat-form-field>
       <br>
-      <button mat-raised-button (click)="saveProduct()">Create Product</button>
+      <button mat-raised-button (click)="saveProduct()">Post Product</button>
       <button mat-raised-button color="warn">Cancel</button>
     </form>
-  </mat-card>
 </div>

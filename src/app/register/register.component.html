@@ -1,105 +1,121 @@
-<p>register works!</p>
+<app-nav-bar></app-nav-bar>
 
-<!--// TODO de facut sa arate frumos-->
-
-<form>
-<!--  Email-->
-  <mat-form-field>
-    <mat-label>
-      Email address
-    </mat-label>
-    <input matInput [(ngModel)]="user.email" name="email">
-  </mat-form-field>
-
-<!--  Password-->
-  <mat-form-field>
-    <mat-label>
-      Password
-    </mat-label>
-    <input matInput [(ngModel)]="user.password" name="password">
-  </mat-form-field>
-
-<!--  Name-->
-  <table>
+<div id="login-box">
+  <div class="left">
+    <h1>Sign up</h1>
     <tr>
-    <td>
-      <mat-form-field>
-        <mat-label>
-          First Name
-        </mat-label>
-        <input matInput [(ngModel)]="user.firstName" name="firstName">
-      </mat-form-field>
-    </td>
-    <td>
-      <mat-form-field>
-        <mat-label>
-          Last name
-        </mat-label>
-        <input matInput [(ngModel)]="user.lastName" name="lastName">
-      </mat-form-field>
-    </td>
+      <td>
+        <mat-form-field>
+          <mat-label>
+            Email addresss
+          </mat-label>
+          <input matInput [(ngModel)]="user.email" name="email">
+        </mat-form-field>
+      </td>
+      <td>
+        <!--  Password-->
+        <mat-form-field>
+          <mat-label>
+            Password
+          </mat-label>
+          <input matInput [(ngModel)]="user.password" name="password">
+        </mat-form-field>
+      </td>
     </tr>
-  </table>
+    <!--  Name-->
+    <table>
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>
+              First Name
+            </mat-label>
+            <input matInput [(ngModel)]="user.firstName" name="firstName">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>
+              Last name
+            </mat-label>
+            <input matInput [(ngModel)]="user.lastName" name="lastName">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
 
-<!--  Address-->
+    <!--  Address-->
 
-  <table>
+    <table>
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>
+              Country
+            </mat-label>
+            <input matInput [(ngModel)]="user.address.country" name="country">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>
+              City
+            </mat-label>
+            <input matInput [(ngModel)]="user.address.city" name="city">
+          </mat-form-field>
+        </td>
+
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>
+              Street
+            </mat-label>
+            <input matInput [(ngModel)]="user.address.street" name="street">
+          </mat-form-field>
+        </td>
+
+        <td>
+          <mat-form-field>
+            <mat-label>
+              Zipcode
+            </mat-label>
+            <input matInput [(ngModel)]="user.address.zipcode" name="zipcode">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
     <tr>
       <td>
         <mat-form-field>
-          <mat-label>
-            Country
-          </mat-label>
-          <input matInput [(ngModel)]="user.address.country" name="country">
+          <mat-label>Role</mat-label>
+          <mat-select name="role" [(ngModel)]="user.role">
+            <mat-option *ngFor="let role of roles" value="{{role.name}}">
+              {{role.name}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </td>
       <td>
         <mat-form-field>
-          <mat-label>
-            City
-          </mat-label>
-          <input matInput [(ngModel)]="user.address.city" name="city">
+          <mat-label>Preffered notification</mat-label>
+          <mat-select name="notification_type" [(ngModel)]="user.messagingChannel">
+            <mat-option *ngFor="let notificationType of notificationOptions" value="{{notificationType}}">
+              {{notificationType}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </td>
+    </tr>
+    <button class="register-button" color="primary" mat-raised-button (click)="register()">Register</button>
+  </div>
 
-    <tr>
-      <td>
-        <mat-form-field>
-          <mat-label>
-            Street
-          </mat-label>
-          <input matInput [(ngModel)]="user.address.street" name="street">
-        </mat-form-field>
-      </td>
+  <div class="right">
+    <span class="loginwith">Sign in with<br/>social network</span>
 
-    <td>
-      <mat-form-field>
-        <mat-label>
-          Zipcode
-        </mat-label>
-        <input matInput [(ngModel)]="user.address.zipcode" name="zipcode">
-      </mat-form-field>
-    </td>
-  </tr>
-  </table>
-
-  <mat-form-field>
-    <mat-label>Role</mat-label>
-    <mat-select name="role" [(ngModel)]="user.role">
-      <mat-option *ngFor="let role of roles" value="{{role.name}}">
-        {{role.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Preffered notification</mat-label>
-    <mat-select name="notification_type" [(ngModel)]="user.messagingChannel">
-      <mat-option *ngFor="let notificationType of notificationOptions" value="{{notificationType}}">
-        {{notificationType}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <button mat-raised-button (click)="register()">Register</button>
-
-</form>
+    <button class="social-signin facebook" (click)="redirectFacebook()">Log in with facebook</button>
+    <button class="social-signin google" (click)="redirectGoogle()">Log in with Google+</button>
+  </div>
+  <div class="or">OR</div>
+</div>

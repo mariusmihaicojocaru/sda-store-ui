@@ -20,10 +20,12 @@
   </div>
   <div>
 
-
+    <a mat-button [routerLink]="['/create-product']">Post Product</a>
     <a mat-button [routerLink]="['/product-card-view']">Store</a>
     <a mat-button [routerLink]="['/my-orders']">My orders</a>
+    <a mat-button [routerLink]="['/register']">Register</a>
     <a mat-button routerLink="register">Edit account</a>
+    <a mat-button [routerLink]="['/login']">Login</a>
     <a mat-raised-button (click)="logout()">Sign out</a>
   </div>
 
