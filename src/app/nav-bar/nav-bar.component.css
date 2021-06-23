@@ -2,6 +2,10 @@
   justify-content: space-between;
 }
 
+.mat-toolbar{
+  background-color: #0084ff;
+}
+
 span {
   padding-right: 2rem;
 }
@@ -13,8 +17,23 @@ a {
   font-size: 29px;
 }
 
-.logo {
+.logo-writing {
   font-size: 40px;
-  font-weight: bold;
-  font-family: "Monotype Corsiva";
+  display: flex;
+  /*background: -webkit-linear-gradient(135deg,#9708CC, #43CBFF);*/
+  background: -webkit-linear-gradient(135deg, blue, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-right: 20px;
+  /*font-size: 40px;*/
+  /*font-weight: bold;*/
+  /*font-family: "Monotype Corsiva";*/
+}
+
+.between-words{
+  font-size: 60px;
+}
+
+.example-full-width{
+  width: 250px;
 }

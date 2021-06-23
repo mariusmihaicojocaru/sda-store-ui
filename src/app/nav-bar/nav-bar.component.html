@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="navbar">
+<mat-toolbar color="primary" class="navbar" style="position: fixed; z-index: 2">
   <div class="logo">
     <a mat-button routerLink="#" (click)="goToShoppingCart()">
       <mat-icon matBadge="{{numberOfProductsInCart}}" matBadgeColor="warn">
@@ -7,14 +7,17 @@
         </span>
       </mat-icon>
     </a>
-    SDA Store
   </div>
-
+  <div class="logo-writing">
+    SDA
+    <div class="between-words"><></div>
+    Store
+  </div>
   <div style="width: 300px; max-height: 60px; align-content: center">
     <form class="example-form">
       <mat-form-field class="example-full-width">
-        <mat-label>Search</mat-label>
-        <input matInput (keyup)="searchProduct($event)" type="text">
+        <mat-label>Poti cauta ce vrei aici</mat-label>
+        <input matInput (keyup.enter)="searchProduct($event)" type="text">
       </mat-form-field>
     </form>
   </div>

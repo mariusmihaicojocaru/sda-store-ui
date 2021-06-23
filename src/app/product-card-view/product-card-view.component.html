@@ -36,21 +36,71 @@
 <div class="product-wrapper">
   <div class="product-list">
     <mat-card class="product-card" *ngFor="let product of products">
-      <mat-card-header>
-        <mat-card-title> {{product.name}} </mat-card-title>
-        <mat-card-subtitle> {{product.productType}} </mat-card-subtitle>
-      </mat-card-header>
+<!--      <mat-card-header>-->
+<!--        <mat-card-title> {{product.name}} </mat-card-title>-->
+<!--        <mat-card-subtitle> {{product.productType}} </mat-card-subtitle>-->
+<!--      </mat-card-header>-->
+<!--      <img mat-card-image src="https://media.telekom.ro/images/lp/tv-net-voce/tv_banner.png"/>-->
+<!--      <mat-card-content>-->
+<!--        <p>-->
+<!--          {{product.description}}-->
+<!--        </p>-->
+<!--      </mat-card-content>-->
+<!--      <mat-card-actions>-->
+<!--        <button mat-button> {{product.price}} RON </button>-->
+<!--        <button mat-button (click)="addProductToCart(product.id)" [disabled]="product.stock === 0 ? true : null"> Add to cart </button>-->
+<!--      </mat-card-actions>-->
+<!--      <head>-->
+<!--        <meta charset="UTF-8">-->
+<!--        &lt;!&ndash;<title> Responsive Animated Product Card | CodingLab </title>&ndash;&gt;-->
+<!--        <link rel="stylesheet">-->
+<!--        &lt;!&ndash; Boxicons CDN Link &ndash;&gt;-->
+<!--        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>-->
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--      </head>-->
+<!--      <body>-->
+        <div class="logo-cart">
+          <!--<img src="images/logo.jpg" alt="logo">-->
+          <i class='bx bx-shopping-bag'></i>
+        </div>
       <img mat-card-image src="https://media.telekom.ro/images/lp/tv-net-voce/tv_banner.png"/>
-      <mat-card-content>
-        <p>
-          {{product.description}}
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button> {{product.price}} RON </button>
-        <button mat-button (click)="addProductToCart(product.id)" [disabled]="product.stock === 0 ? true : null"> Add to cart </button>
-      </mat-card-actions>
+        <div class="shoe-details">
+          <span class="shoe_name">{{product.name}}</span>
+          <p>{{product.description}}</p>
+          <div class="stars">
+            <i class='bx bxs-star' ></i>
+            <i class='bx bxs-star' ></i>
+            <i class='bx bxs-star' ></i>
+            <i class='bx bxs-star' ></i>
+            <i class='bx bx-star' ></i>
+          </div>
+        </div>
+        <div class="product-price">
+          <div class="price">
+            <span class="price_num">{{product.price}}</span>
+            <span class="price_letter">LEI RON</span>
+          </div>
+        </div>
+        <div class="button">
+          <div class="button-layer"></div>
+          <button (click)="addProductToCart(product.id)" [disabled]="product.stock === 0 ? true : null">Add To Cart</button>
+        </div>
+      <script>
+        let circle = document.querySelector(".color-option");
+
+        circle.addEventListener("click", (e)=>{
+          let target = e.target;
+          if(target.classList.contains("circle")){
+            circle.querySelector(".active").classList.remove("active");
+            target.classList.add("active");
+            document.querySelector(".main-images .active").classList.remove("active");
+            document.querySelector(`.main-images .${target.id}`).classList.add("active");
+          }
+        });
+      </script>
+<!--      </body>-->
+
     </mat-card>
   </div>
-  <div> <mat-paginator [length]="totalNumberOfElements" [pageSizeOptions]="[5, 10]" (page)="changePage($event)"></mat-paginator></div>
+  <div> <mat-paginator [length]="totalNumberOfElements" [pageSizeOptions]="[10, 20]" (page)="changePage($event)"></mat-paginator></div>
 </div>

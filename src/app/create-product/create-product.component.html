@@ -1,9 +1,9 @@
 <app-nav-bar></app-nav-bar>
-
-<div class="description"><p>Here you can post your own product if you want to sell it.</p>
-<p> Note that your email is essential if you want to be contacted.</p></div>
-
 <div class="form">
+
+  <div class="description"><p>Here you can post your own product if you want to sell it.</p>
+    <p> Note that your email is essential if you want to be contacted.</p></div>
+
     <mat-card-title>Post Product</mat-card-title>
     <hr>
     <form>
@@ -46,7 +46,7 @@
         </mat-select>
       </mat-form-field>
       <br>
-      <button mat-raised-button (click)="saveProduct()">Post Product</button>
-      <button mat-raised-button color="warn">Cancel</button>
+      <button mat-raised-button color="primary" (click)="saveProduct()">Post Product</button>
+      <button mat-raised-button color="warn" [routerLink]="['/product-card-view']">Cancel</button>
     </form>
 </div>

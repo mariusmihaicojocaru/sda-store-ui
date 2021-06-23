@@ -21,7 +21,7 @@ export class ProductTableViewComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.getProducts(0, 5, this.productFilters);
+    this.getProducts(0, 10, this.productFilters);
   }
 
   changePage(event: PageEvent): void{
@@ -43,17 +43,17 @@ export class ProductTableViewComponent implements OnInit {
   }
 
   filterTable(): void{
-    this.getProducts(0, 5, this.productFilters);
+    this.getProducts(0, 10, this.productFilters);
   }
 
   getCategoryId(event: any): void{
     this.productFilters.categoryId = event;
-    this.getProducts(0, 5, this.productFilters);
+    this.getProducts(0, 10, this.productFilters);
   }
 
   changeProductType(event: any): void{
     this.productFilters.productType = event.value;
-    this.getProducts(0, 5, this.productFilters);
+    this.getProducts(0, 10, this.productFilters);
   }
 
   delete(id: number): void{

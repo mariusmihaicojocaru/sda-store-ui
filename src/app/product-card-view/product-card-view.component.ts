@@ -16,7 +16,7 @@ export class ProductCardViewComponent implements OnInit {
   // de luat de dincolo
   totalNumberOfElements = 0;
   totalNumberOfElementsInCart = 0;
-  paginatorSize = 5;
+  paginatorSize = 10;
   productFilters: ProductFilters = {
     name: '',
     lowPrice: 0,
@@ -51,7 +51,7 @@ export class ProductCardViewComponent implements OnInit {
     this.shoppingCartService.addProductToCart(productId).subscribe((data) => {
       this.totalNumberOfElementsInCart = data.productsInCart.length;
     }, error => {
-      this.toastr.warning('Product alreay in cart.');
+      this.toastr.warning('Product already in cart.');
     });
   }
 
