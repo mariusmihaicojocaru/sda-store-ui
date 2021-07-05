@@ -69,6 +69,7 @@ export class CategoriesTreeViewComponent implements OnInit {
   checkNodeId(node: any): void{
     this.categoryChangeEvent.emit(node.id);
   }
+
 }
 
 @Component({

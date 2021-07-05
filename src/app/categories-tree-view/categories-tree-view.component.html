@@ -23,7 +23,7 @@
   </mat-tree-node>
 
   <mat-nested-tree-node *matTreeNodeDef="let node; when: hasSubcategories">
-      <div *ngIf="role === 'ADMINISTRATOR'">
+
       <div class="category-element" >
         <button mat-icon-button matTreeNodeToggle>
           <mat-icon>
@@ -31,7 +31,7 @@
           </mat-icon>
         </button>
         <p (click)="checkNodeId(node)" class="category-item" style="margin: 0">{{node.name}}</p>
-
+        <div *ngIf="role === 'ADMINISTRATOR'" >
           <button mat-icon-button>
             <mat-icon class="add_button" style="font-max-size: 8px">
               add
@@ -47,12 +47,15 @@
               delete
             </mat-icon>
           </button>
+          </div>
         </div>
 
-      </div>
+
       <ul [class.example-tree-invisible]="!treeControl.isExpanded(node)" style="margin: 0px">
         <ng-container matTreeNodeOutlet></ng-container>
       </ul>
   </mat-nested-tree-node>
 
 </mat-tree>
+
+

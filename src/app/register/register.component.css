@@ -12,10 +12,13 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
-
+.forced-spacing{
+  padding-down: 100px;
+}
 #login-box {
-  position: relative;
-  margin: 5% auto;
+  position: fixed;
+  margin-top: 100px;
+  margin-left: 350px;
   width: 850px;
   height: 500px;
   background: #FFF;

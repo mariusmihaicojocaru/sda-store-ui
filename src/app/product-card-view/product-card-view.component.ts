@@ -57,7 +57,6 @@ export class ProductCardViewComponent implements OnInit {
 
   filterProducts(event: string): void {
     this.productFilters.name = event;
-    this.productFilters.productType = event;
     this.getProducts(0, this.paginatorSize, this.productFilters);
   }
 

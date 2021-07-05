@@ -40,6 +40,8 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
 import { OrderPageComponent } from './order-page/order-page.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import {MatListModule} from '@angular/material/list';
     ProductCardViewComponent,
     ShoppingCartComponent,
     OrderSuccessComponent,
-    OrderPageComponent
+    OrderPageComponent,
+    UpdateUserComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

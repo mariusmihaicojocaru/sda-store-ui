@@ -1,9 +1,14 @@
-<mat-toolbar color="primary" class="navbar" style="position: fixed; z-index: 2">
+
+<link rel="stylesheet" href="nav-bar.component.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
+<mat-toolbar color="primary" class="navbar" style="position: fixed; z-index: 4">
   <div class="logo">
     <a mat-button routerLink="#" (click)="goToShoppingCart()">
       <mat-icon matBadge="{{numberOfProductsInCart}}" matBadgeColor="warn">
-        <span class="material-icons">
-         add_shopping_cart
+        <span class="material-icons-outlined">
+        shopping_cart
         </span>
       </mat-icon>
     </a>
@@ -14,22 +19,33 @@
     Store
   </div>
   <div style="width: 300px; max-height: 60px; align-content: center">
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <mat-label>Poti cauta ce vrei aici</mat-label>
-        <input matInput (keyup.enter)="searchProduct($event)" type="text">
-      </mat-form-field>
-    </form>
+
+    <div class="box">
+      <input type="checkbox" id="check">
+      <div class="search-box">
+        <input type="text" placeholder="Cauta..." (keyup.enter)="searchProduct($event)">
+        <label for="check" class="icon">
+          <i class="fas fa-search"></i>
+        </label>
+      </div>
+    </div>
+
+<!--    <form class="example-form">-->
+<!--      <mat-form-field class="example-full-width">-->
+<!--        <mat-label>Poti cauta ce vrei aici</mat-label>-->
+<!--        <input matInput (keyup.enter)="searchProduct($event)" type="text">-->
+<!--      </mat-form-field>-->
+<!--    </form>-->
   </div>
   <div>
 
-    <a mat-button [routerLink]="['/create-product']">Post Product</a>
-    <a mat-button [routerLink]="['/product-card-view']">Store</a>
-    <a mat-button [routerLink]="['/my-orders']">My orders</a>
-    <a mat-button [routerLink]="['/register']">Register</a>
-    <a mat-button routerLink="register">Edit account</a>
-    <a mat-button [routerLink]="['/login']">Login</a>
-    <a mat-raised-button (click)="logout()">Sign out</a>
+    <a mat-button [routerLink]="['/create-product']">Adauga produs</a>
+    <a mat-button [routerLink]="['/product-card-view']">Magazin</a>
+    <a mat-button [routerLink]="['/my-orders']">Comenzile mele</a>
+    <a mat-button [routerLink]="['/register']">Inregistrare</a>
+    <a mat-button routerLink="register">Editare cont</a>
+    <a mat-button [routerLink]="['/login']">Autentificare</a>
+    <a mat-raised-button (click)="logout()">Deconectare</a>
   </div>
 
 

@@ -12,6 +12,7 @@ import {CreateProductComponent} from './create-product/create-product.component'
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {OrderSuccessComponent} from './order-success/order-success.component';
 import {OrderPageComponent} from './order-page/order-page.component';
+import {UpdateUserComponent} from './update-user/update-user.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'create-product', component: CreateProductComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'order-success', component: OrderSuccessComponent},
-  {path: 'my-orders', component: OrderPageComponent}
+  {path: 'my-orders', component: OrderPageComponent},
+  {path: 'update-user', component: UpdateUserComponent}
 
 ];
 

@@ -67,7 +67,7 @@
           <tr mat-header-row *matHeaderRowDef="columns"></tr>
           <tr mat-row *matRowDef="let productColumns; columns: columns"></tr>
         </table>
-        <mat-paginator [pageSizeOptions]="[10, 20, 30]" [length]="totalNumberOfElements" (page)="changePage($event)"></mat-paginator>
+        <mat-paginator [pageSizeOptions]="[10, 20, 30]" [length]="totalNumberOfElements" (page)="changePage($event)" style="justify-content: center"></mat-paginator>
       </div>
     </div>
 

@@ -4,6 +4,7 @@ export interface Role{
 }
 
 export interface UserDto{
+  id: number;
   email: string;
   password: string;
   imageUrl: string;
@@ -19,4 +20,13 @@ export interface AddressDto{
   city: string;
   street: string;
   zipcode: string;
+}
+
+export interface User{
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  address: AddressDto;
 }

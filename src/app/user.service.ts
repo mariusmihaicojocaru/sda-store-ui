@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {AppConfig} from './config/app-config';
-import {Role, UserDto} from './model/user-models';
+import {AddressDto, Role, User, UserDto} from './model/user-models';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +17,9 @@ export class UserService {
 
   register(userDto: UserDto): Observable<UserDto>{
     return this.httpClient.post<UserDto>(AppConfig.API_PATH + '/register', userDto);
+  }
+
+  update(id: number, user: User): Observable<UserDto>{
+    return this.httpClient.put<UserDto>(AppConfig.API_PATH + '/users/' + id, user);
   }
 }
