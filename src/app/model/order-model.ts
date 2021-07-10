@@ -18,6 +18,7 @@ export interface OrderLineDto{
 export interface OrderRequestDto{
   shoppingCartOrderLineDtoList: ProductOrderLine[];
   paymentDetailsDto: PaymentDetailsDto;
+  orderDetailsDto: OrderDetailsDto;
 }
 
 export interface PaymentDetailsDto{
@@ -26,4 +27,9 @@ export interface PaymentDetailsDto{
   cardNumber: string;
   expirationDate: string;
   cardProvider: string;
+}
+
+export interface OrderDetailsDto{
+  shippingDetails: string;
+  additionalInfo: string;
 }

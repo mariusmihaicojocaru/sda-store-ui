@@ -3,6 +3,7 @@ import {ShoppingCartService} from '../shopping-cart.service';
 import {AppConfig} from '../config/app-config';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -12,6 +13,8 @@ export class NavBarComponent implements OnInit {
 
   @Input() numberOfProductsInCart = 0;
   @Output() searchChangeEvent: EventEmitter<string> = new EventEmitter<string>();
+  role = localStorage.getItem('ROLE');
+  userName = 'Marius';
 
   constructor(private shoppingCartService: ShoppingCartService, private router: Router) { }
 
@@ -35,7 +38,13 @@ export class NavBarComponent implements OnInit {
 
   logout(): void{
     localStorage.clear();
+    this.ngOnInit();
     this.router.navigate(['/login']);
   }
 
+  readUser($event: any): void{
+    this.userName = $event.target.value;
+  }
 }
+
+

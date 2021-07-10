@@ -6,7 +6,7 @@ import {ProductService} from '../product.service';
 import {ProductShoppingCartResponseDto} from '../model/shopping-cart-model';
 import {ProductOrderLine, ProductResponseDto} from '../model/product-model';
 import {Router} from '@angular/router';
-import {OrderRequestDto, PaymentDetailsDto} from '../model/order-model';
+import {OrderDetailsDto, OrderRequestDto, PaymentDetailsDto} from '../model/order-model';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -22,6 +22,10 @@ export class ShoppingCartComponent implements OnInit {
     cardNumber: '',
     expirationDate: '',
     cardProvider: 'VISA'
+  };
+  orderDetails: OrderDetailsDto = {
+    shippingDetails: '',
+    additionalInfo: ''
   };
 
   constructor(private toastr: ToastrService,
@@ -45,6 +49,7 @@ export class ShoppingCartComponent implements OnInit {
   makeOrder(): void {
     const orderRequestDto: OrderRequestDto = {
       paymentDetailsDto: this.paymentDetails,
+      orderDetailsDto: this.orderDetails,
       shoppingCartOrderLineDtoList: this.productOrderLine
     };
 
@@ -63,7 +68,15 @@ export class ShoppingCartComponent implements OnInit {
       }
     });
     console.log(this.productOrderLine);
-    console.log('Product id is ' + productId);
+  }
+
+  removeProductFromShoppingCart(id: number): void{
+    this.shoppingCartService.removeProductFromCart(id).subscribe((data) => {
+      this.toastr.success('Product has been removed from shopping cart.');
+      window.location.reload();
+    }, error => {
+      this.toastr.error('Something went wrong !!!!' + error);
+    });
   }
 
 }

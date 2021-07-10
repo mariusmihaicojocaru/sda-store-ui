@@ -27,7 +27,7 @@
 }
 
 .product-list {
-  padding-top: 70px;
+  padding-top: 5px;
   overflow: auto;
 }
 
@@ -35,13 +35,16 @@
   float: left;
   width: 15%;
   border-style: outset;
+  color: #0084ff;
+  border-color: #0084ff;
   padding: 5px;
-  margin: 70px 3px 10px 5px;
+  margin: 5px 3px 10px 5px;
 }
 
 
 .full-width {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 /* Google Fonts Poppins */
@@ -250,6 +253,7 @@ body {
 }
 
 .product-card .button button {
+  justify-items: baseline;
   position: relative;
   height: 100%;
   width: 100%;
@@ -261,5 +265,6 @@ body {
   letter-spacing: 1px;
   color: #fff;
 }
+
 
 

@@ -24,4 +24,8 @@ export class ShoppingCartService {
   makeOrder(orderRequestDto: OrderRequestDto): Observable<any>{
     return this.httpClient.post(AppConfig.API_PATH + '/order', orderRequestDto);
   }
+
+  removeProductFromCart(id: number): Observable<any> {
+    return this.httpClient.delete(AppConfig.API_PATH + '/shopping-cart/delete/' + id);
+  }
 }

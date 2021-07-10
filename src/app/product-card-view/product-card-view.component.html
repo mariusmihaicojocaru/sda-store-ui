@@ -3,7 +3,7 @@
 
 <div class="filter-wrapper">
 
-
+<div class="description">Search by lowest price</div>
   <mat-form-field class="full-width">
     <mat-label>
       Low price
@@ -11,6 +11,7 @@
     <input matInput name="low-price-filter" type="number" (keyup)="changeLowPrice($event)">
   </mat-form-field>
 
+  <div class="description">Search by highest price</div>
   <mat-form-field class="full-width">
     <mat-label>
       High Price
@@ -18,7 +19,7 @@
     <input matInput name="high-price-filter" type="number" (keyup)="changeHighPrice($event)">
   </mat-form-field>
 
-
+  <div class="description">Search by product type</div>
   <mat-form-field class="full-width">
     <mat-label>
       Product type
@@ -30,6 +31,7 @@
 
   </mat-form-field>
 
+  <div class="description">Search by category</div>
   <app-categories-tree-view (categoryChangeEvent)="filterProductsByCategory($event)"></app-categories-tree-view>
 
 </div>
@@ -37,29 +39,6 @@
 <div class="product-wrapper">
   <div class="product-list">
     <mat-card class="product-card" *ngFor="let product of products">
-      <!--      <mat-card-header>-->
-      <!--        <mat-card-title> {{product.name}} </mat-card-title>-->
-      <!--        <mat-card-subtitle> {{product.productType}} </mat-card-subtitle>-->
-      <!--      </mat-card-header>-->
-      <!--      <img mat-card-image src="https://media.telekom.ro/images/lp/tv-net-voce/tv_banner.png"/>-->
-      <!--      <mat-card-content>-->
-      <!--        <p>-->
-      <!--          {{product.description}}-->
-      <!--        </p>-->
-      <!--      </mat-card-content>-->
-      <!--      <mat-card-actions>-->
-      <!--        <button mat-button> {{product.price}} RON </button>-->
-      <!--        <button mat-button (click)="addProductToCart(product.id)" [disabled]="product.stock === 0 ? true : null"> Add to cart </button>-->
-      <!--      </mat-card-actions>-->
-      <!--      <head>-->
-      <!--        <meta charset="UTF-8">-->
-      <!--        &lt;!&ndash;<title> Responsive Animated Product Card | CodingLab </title>&ndash;&gt;-->
-      <!--        <link rel="stylesheet">-->
-      <!--        &lt;!&ndash; Boxicons CDN Link &ndash;&gt;-->
-      <!--        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>-->
-      <!--        <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-      <!--      </head>-->
-      <!--      <body>-->
       <div class="logo-cart">
         <!--<img src="images/logo.jpg" alt="logo">-->
         <i class='bx bx-shopping-bag'>Categorie: </i>

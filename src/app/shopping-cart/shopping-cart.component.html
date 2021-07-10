@@ -29,6 +29,7 @@
             </mat-select>
             <label style="font-weight: bolder">buc.</label>
           </div>
+          <button (click)="removeProductFromShoppingCart(product.id)">Remove from cart</button>
         </mat-card-content>
       </div>
     </mat-card>
@@ -47,7 +48,7 @@
             <input type="text" placeholder="Last Name"/>
           </div>
           <div class="address">
-            <input type="text" onkeyup="change()" id="put" placeholder="Address"/>
+            <input type="text" placeholder="Address"/>
             <input type="number" placeholder="Pincode"/>
             <input type="text" placeholder="Country"/>
           </div>
@@ -74,10 +75,10 @@
         <h1>Shipping Details</h1>
         <div class="shipping_card">
           <div class="new_card">
-            <input id="output-address" class="output-address" type="text" placeholder="Introduce adresa aici">
+            <textarea class="output-address" type="text" [(ngModel)]="orderDetails.shippingDetails" placeholder="Introduce adresa aici"></textarea>
           </div>
           <div class="add_savedcard">
-            <p>Lokhandwala Complex, Andheri (west)</p>
+            <textarea class="additional-details" type="text" [(ngModel)]="orderDetails.additionalInfo" placeholder="Detalii suplimentare"></textarea>
           </div>
         </div>
         <div class="proced_payment">

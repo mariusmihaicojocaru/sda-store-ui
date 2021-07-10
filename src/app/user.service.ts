@@ -19,7 +19,11 @@ export class UserService {
     return this.httpClient.post<UserDto>(AppConfig.API_PATH + '/register', userDto);
   }
 
-  update(id: number, user: User): Observable<UserDto>{
-    return this.httpClient.put<UserDto>(AppConfig.API_PATH + '/users/' + id, user);
+  update(email: string, user: User): Observable<User>{
+    return this.httpClient.put<User>(AppConfig.API_PATH + '/users/' + email, user);
+  }
+
+  getUserByEmail(email: string): Observable<any>{
+    return this.httpClient.get<UserDto>(AppConfig.API_PATH + '/user/' + email);
   }
 }

@@ -1,8 +1,9 @@
-import {Component, Injector, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from '../user.service';
-import {AddressDto, User, UserDto} from '../model/user-models';
-import {PaymentDetailsDto} from '../model/order-model';
+import {AddressDto, User} from '../model/user-models';
 import {ToastrService} from 'ngx-toastr';
+import {HttpClient} from '@angular/common/http';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-update-user',
@@ -13,22 +14,30 @@ export class UpdateUserComponent implements OnInit {
 
   address: AddressDto = {} as AddressDto;
 
-  user: User = {
-    id: 13,
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    address: this.address,
-    };
+  user: User = {} as User;
 
-  constructor(private userService: UserService, private toastr: ToastrService) { }
+  constructor(private userService: UserService, private toastr: ToastrService, private httpClient: HttpClient) { }
+
+  // User = new User();
 
   ngOnInit(): void {
+    // this.userService.getUserByEmail(atob(localStorage.getItem('Basic') as string)).subscribe( (data) => {
+    //   // var currentAccount = data.result;
+    //     // @ts-ignore
+    //   if (this.updateUser.value.password !== ''){
+    //       currentAccount.password = this.updateUser.value.password;
+    //     }
+    //   currentAccount.email = this.updateUser.value.email;
+    //
+    //   }, error => {
+    //
+    // });
+
+
   }
 
-  update(id: number, user: User): void {
-    this.userService.update(this.user.id, this.user).subscribe(data => {
+  update(email: string, value: any): void {
+    this.userService.update(email, this.user).subscribe(data => {
       this.user = data;
       this.toastr.success('Account has been edited successfully');
     }, error => {

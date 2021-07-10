@@ -22,11 +22,26 @@ export interface AddressDto{
   zipcode: string;
 }
 
+// export class AddressDto {
+//   country: string | undefined;
+//   city: string | undefined;
+//   street: string | undefined;
+//   zipcode: string | undefined;
+// }
+
 export interface User{
-  id: number;
   firstName: string;
   lastName: string;
   email: string;
   password: string;
   address: AddressDto;
 }
+
+// export class User{
+//   firstName: string | undefined;
+//   lastName: string | undefined;
+//   email: string | undefined;
+//   password: string | undefined;
+//   address: AddressDto | undefined;
+//
+// }

@@ -1,103 +1,105 @@
-<!--<p>update-user works!</p>-->
-<!--<mat-form-field class="firstName">-->
-<!--  <mat-label>First Name</mat-label>-->
-<!--  <input matInput [(ngModel)]="user.firstName" name="firstName">-->
-<!--</mat-form-field>-->
+<p>update-user works!</p>
+<div>
+<mat-form-field class="firstName">
+  <mat-label>First Name</mat-label>
+  <input matInput [(ngModel)]="user.firstName" name="firstName">
+</mat-form-field>
 
-<!--<mat-form-field class="lastName">-->
-<!--  <mat-label>Last Name</mat-label>-->
-<!--  <input matInput [(ngModel)]="user.lastName" name="lastName">-->
-<!--</mat-form-field>-->
+<mat-form-field class="lastName">
+  <mat-label>Last Name</mat-label>
+  <input matInput [(ngModel)]="user.lastName" name="lastName">
+</mat-form-field>
 
-<!--<mat-form-field class="email">-->
-<!--  <mat-label>Email</mat-label>-->
-<!--  <input matInput [(ngModel)]="user.email" name="email">-->
-<!--</mat-form-field>-->
+<mat-form-field class="email">
+  <mat-label>Email</mat-label>
+  <input matInput [(ngModel)]="user.email" name="email">
+</mat-form-field>
 
-<!--<mat-form-field class="password">-->
-<!--  <mat-label>New Password</mat-label>-->
-<!--  <input matInput [(ngModel)]="user.password" name="password">-->
-<!--</mat-form-field>-->
+<mat-form-field class="password">
+  <mat-label>New Password</mat-label>
+  <input matInput [(ngModel)]="user.password" name="password">
+</mat-form-field>
 
-<!--<mat-form-field class="password">-->
-<!--  <mat-label>Street</mat-label>-->
-<!--  <input matInput [(ngModel)]="user.address.street" name="street">-->
-<!--</mat-form-field>-->
+<mat-form-field class="password">
+  <mat-label>Street</mat-label>
+  <input matInput [(ngModel)]="user.address.street" name="street">
+</mat-form-field>
 
-<!--<mat-form-field class="password">-->
-<!--  <mat-label>City</mat-label>-->
-<!--  <input matInput [(ngModel)]="user.address.city" name="city">-->
-<!--</mat-form-field>-->
+<mat-form-field class="password">
+  <mat-label>City</mat-label>
+  <input matInput [(ngModel)]="user.address.city" name="city">
+</mat-form-field>
 
-<!--<mat-form-field class="password">-->
-<!--  <mat-label>Country</mat-label>-->
-<!--  <input matInput [(ngModel)]="user.address.country" name="country">-->
-<!--</mat-form-field>-->
+<mat-form-field class="password">
+  <mat-label>Country</mat-label>
+  <input matInput [(ngModel)]="user.address.country" name="country">
+</mat-form-field>
 
-<!--<mat-form-field class="password">-->
-<!--  <mat-label>Zip Code</mat-label>-->
-<!--  <input matInput [(ngModel)]="user.address.zipcode" name="zipcode">-->
-<!--</mat-form-field>-->
-
-<!--<button mat-raised-button color="primary" (click)="update(user.id, user)">Confirm changes</button>-->
-<!--<button mat-raised-button color="warn" [routerLink]="['/product-card-view']">Cancel</button>-->
-
-<app-nav-bar></app-nav-bar>
-<div class="body">
-  <div class="container">
-    <div class="title">Editare Cont</div>
-    <div class="content">
-      <form action="#">
-        <div class="input">
-          <div class="row1">
-            <mat-form-field class="form-field">
-              <mat-label>First Name</mat-label>
-              <input matInput [(ngModel)]="user.firstName" name="firstName">
-            </mat-form-field>
-            <mat-form-field class="form-field">
-              <mat-label>First Name</mat-label>
-              <input matInput [(ngModel)]="user.firstName" name="firstName">
-            </mat-form-field>
-            <mat-form-field class="form-field">
-              <mat-label>First Name</mat-label>
-              <input matInput [(ngModel)]="user.firstName" name="firstName">
-            </mat-form-field>
-          </div>
-          <div class="row2">
-            <mat-form-field class="form-field">
-              <mat-label>First Name</mat-label>
-              <input matInput [(ngModel)]="user.firstName" name="firstName">
-            </mat-form-field>
-            <mat-form-field class="form-field">
-              <mat-label>First Name</mat-label>
-              <input matInput [(ngModel)]="user.firstName" name="firstName">
-            </mat-form-field>
-          </div>
-          <div class="row3">
-            <mat-form-field class="form-field">
-              <mat-label>First Name</mat-label>
-              <input matInput [(ngModel)]="user.firstName" name="firstName">
-            </mat-form-field>
-            <mat-form-field class="form-field">
-              <mat-label>First Name</mat-label>
-              <input matInput [(ngModel)]="user.firstName" name="firstName">
-            </mat-form-field>
-            <mat-form-field class="form-field">
-              <mat-label>First Name</mat-label>
-              <input matInput [(ngModel)]="user.firstName" name="firstName">
-            </mat-form-field>
-            <mat-form-field class="form-field">
-              <mat-label>First Name</mat-label>
-              <input matInput [(ngModel)]="user.firstName" name="firstName">
-            </mat-form-field>
-          </div>
-        </div>
-        <div class="button">
-          <input type="submit" (click)="update(user.id, user)" value="Comfirmare schimbari">
-          <input type="submit" color="warn" [routerLink]="['/product-card-view']" value="Anulare">
-          <!--<button mat-raised-button color="warn" [routerLink]="['/product-card-view']">Cancel</button>-->
-        </div>
-      </form>
-    </div>
-  </div>
+<mat-form-field class="password">
+  <mat-label>Zip Code</mat-label>
+  <input matInput [(ngModel)]="user.address.zipcode" name="zipcode">
+</mat-form-field>
 </div>
+
+<button mat-raised-button color="primary" (click)="update(this.user.email, this.user)">Confirm changes</button>
+<button mat-raised-button color="warn" [routerLink]="['/product-card-view']">Cancel</button>
+
+<!--<app-nav-bar></app-nav-bar>-->
+<!--<div class="body">-->
+<!--  <div class="container">-->
+<!--    <div class="title">Editare Cont</div>-->
+<!--    <div class="content">-->
+<!--      <form [formGroup]="updateUser" action="#">-->
+<!--        <div class="input">-->
+<!--          <div class="row1">-->
+<!--            <mat-form-field class="form-field">-->
+<!--              <mat-label>First Name</mat-label>-->
+<!--              <input matInput [(ngModel)]="user.firstName" name="firstName">-->
+<!--            </mat-form-field>-->
+<!--            <mat-form-field class="form-field">-->
+<!--              <mat-label>First Name</mat-label>-->
+<!--              <input matInput [(ngModel)]="user.lastName" name="firstName">-->
+<!--            </mat-form-field>-->
+<!--            <mat-form-field class="form-field">-->
+<!--              <mat-label>First Name</mat-label>-->
+<!--              <input matInput [(ngModel)]="user.email" name="firstName">-->
+<!--            </mat-form-field>-->
+<!--          </div>-->
+<!--          <div class="row2">-->
+<!--            <mat-form-field class="form-field">-->
+<!--              <mat-label>First Name</mat-label>-->
+<!--              <input matInput [(ngModel)]="user.firstName" name="firstName">-->
+<!--            </mat-form-field>-->
+<!--            <mat-form-field class="form-field">-->
+<!--              <mat-label>First Name</mat-label>-->
+<!--              <input matInput [(ngModel)]="user.firstName" name="firstName">-->
+<!--            </mat-form-field>-->
+<!--          </div>-->
+<!--          <div class="row3">-->
+<!--            <mat-form-field class="form-field">-->
+<!--              <mat-label>First Name</mat-label>-->
+<!--              <input matInput [(ngModel)]="user.firstName" name="firstName">-->
+<!--            </mat-form-field>-->
+<!--            <mat-form-field class="form-field">-->
+<!--              <mat-label>First Name</mat-label>-->
+<!--              <input matInput [(ngModel)]="user.firstName" name="firstName">-->
+<!--            </mat-form-field>-->
+<!--            <mat-form-field class="form-field">-->
+<!--              <mat-label>First Name</mat-label>-->
+<!--              <input matInput [(ngModel)]="user.firstName" name="firstName">-->
+<!--            </mat-form-field>-->
+<!--            <mat-form-field class="form-field">-->
+<!--              <mat-label>First Name</mat-label>-->
+<!--              <input matInput [(ngModel)]="user.firstName" name="firstName">-->
+<!--            </mat-form-field>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="button">-->
+<!--          <input type="submit" (click)="update(user.id, user)" value="Comfirmare schimbari">-->
+<!--          <input type="submit" color="warn" [routerLink]="['/product-card-view']" value="Anulare">-->
+<!--          &lt;!&ndash;<button mat-raised-button color="warn" [routerLink]="['/product-card-view']">Cancel</button>&ndash;&gt;-->
+<!--        </div>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

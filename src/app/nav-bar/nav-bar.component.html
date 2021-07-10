@@ -1,9 +1,8 @@
-
 <link rel="stylesheet" href="nav-bar.component.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 
-<mat-toolbar color="primary" class="navbar" style="position: fixed; z-index: 4">
+<mat-toolbar color="primary" class="navbar" style=" z-index: 4">
   <div class="logo">
     <a mat-button routerLink="#" (click)="goToShoppingCart()">
       <mat-icon matBadge="{{numberOfProductsInCart}}" matBadgeColor="warn">
@@ -29,25 +28,52 @@
         </label>
       </div>
     </div>
-
-<!--    <form class="example-form">-->
-<!--      <mat-form-field class="example-full-width">-->
-<!--        <mat-label>Poti cauta ce vrei aici</mat-label>-->
-<!--        <input matInput (keyup.enter)="searchProduct($event)" type="text">-->
-<!--      </mat-form-field>-->
-<!--    </form>-->
   </div>
-  <div>
-
-    <a mat-button [routerLink]="['/create-product']">Adauga produs</a>
-    <a mat-button [routerLink]="['/product-card-view']">Magazin</a>
-    <a mat-button [routerLink]="['/my-orders']">Comenzile mele</a>
-    <a mat-button [routerLink]="['/register']">Inregistrare</a>
-    <a mat-button routerLink="register">Editare cont</a>
-    <a mat-button [routerLink]="['/login']">Autentificare</a>
-    <a mat-raised-button (click)="logout()">Deconectare</a>
+  <div class="row">
+    <!--    <a mat-button [routerLink]="['/create-product']">Adauga produs</a>-->
+    <!--    <a mat-button [routerLink]="['/product-card-view']">Magazin</a>-->
+    <!--    <a mat-button [routerLink]="['/my-orders']">Comenzile mele</a>-->
+    <!--    <a mat-button [routerLink]="['/register']">Inregistrare</a>-->
+    <!--    <a mat-button routerLink="register">Editare cont</a>-->
+    <!--    <a mat-button [routerLink]="['/login']">Autentificare</a>-->
+    <!--    <a mat-raised-button (click)="logout()">Deconectare</a>-->
+    <a class="nav-bar-buttons">
+      <ul>
+        <a mat-button [routerLink]="['/create-product']">Adauga produs</a>
+        <a mat-button [routerLink]="['/product-card-view']">Magazin</a>
+        <a mat-button [routerLink]="['/my-orders']">Comenzile mele</a>
+        <!--          <a mat-button routerLink="register">Editare cont</a>&ndash;&gt;-->
+        <!--          <a mat-button [routerLink]="['/login']">Autentificare</a>-->
+        <!--          <a mat-raised-button (click)="logout()">Deconectare</a>-->
+        <li class="drop">
+          <a mat-raised-button>
+            <div class="button-content">You</div>
+          </a>
+          <div *ngIf="role === 'ADMINISTRATOR' || role === 'CUSTOMER'; else notLogged">
+            <div class="dropdownContain">
+              <div class="dropOut">
+                <ul>
+                  <li>Bun venit, {{userName}}</li>
+                  <li><a class="drop-down-command" routerLink="register">Editare cont</a></li>
+                  <li><a class="drop-down-command" (click)="logout()">Deconectare</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <ng-template #notLogged>
+            <div class="dropdownContain">
+              <div class="dropOut">
+                <ul>
+                  <li><a class="drop-down-command" [routerLink]="['/register']">Inregistrare</a></li>
+                  <li><a class="drop-down-command" [routerLink]="['/login']">Autentificare</a></li>
+                </ul>
+              </div>
+            </div>
+          </ng-template>
+        </li>
+      </ul>
+    </a>
   </div>
-
 
 </mat-toolbar>
 
